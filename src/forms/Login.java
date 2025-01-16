@@ -50,12 +50,14 @@ public class Login extends javax.swing.JFrame {
         btnSingUp = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         setForeground(java.awt.Color.white);
         setMaximumSize(new java.awt.Dimension(635, 506));
         setMinimumSize(new java.awt.Dimension(635, 506));
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
@@ -124,6 +126,15 @@ public class Login extends javax.swing.JFrame {
         jLabel7.setText("password");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 418, 130, -1));
 
+        btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnExit.setText("X");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 40, 60, -1));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -156,6 +167,7 @@ public class Login extends javax.swing.JFrame {
                     // Navigate to the Dashboard page
                     this.dispose(); // Close the current Login window
                     Dashboard dashboard = new Dashboard(); // Assuming Dashboard is the class for your dashboard page
+                    dashboard.setExtendedState(MAXIMIZED_BOTH); // Maximize the Dashboard window
                     dashboard.setVisible(true); // Show the dashboard
                 } else {
                     // Invalid credentials
@@ -177,6 +189,10 @@ public class Login extends javax.swing.JFrame {
     private void btnSingUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSingUpActionPerformed
         BDUtility.openForm(SingUpAdmin.class.getSimpleName(), new SingUpAdmin());
     }//GEN-LAST:event_btnSingUpActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+           System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,6 +233,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSingUp;
     private javax.swing.JLabel jLabel1;
